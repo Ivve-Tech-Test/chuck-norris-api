@@ -1,13 +1,13 @@
 FROM node:latest
 
-WORKDIR /app
+WORKDIR /api
 
-COPY ./* .
+COPY . .
 
-RUN npm install
-
+RUN rm -rf node_modules
+RUN npm i
 RUN npm run build
 
 EXPOSE 3001
 
-CMD [ "node", "dist/main.js" ]
+CMD ["nginx", "-g", "daemon off;"]
