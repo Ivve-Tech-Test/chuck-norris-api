@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  chuck-norris-api:
+    container_name: chuck-norris-api
+    restart: always
+    build: .
+    ports:
+      - '${APP}:${APP}'
+    env_file:
+      - .env
