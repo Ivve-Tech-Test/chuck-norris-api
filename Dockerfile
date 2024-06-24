@@ -10,4 +10,4 @@ RUN npm run build
 
 EXPOSE 3001
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["npm", "start", "build"]
